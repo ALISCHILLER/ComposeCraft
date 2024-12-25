@@ -1,4 +1,4 @@
-package com.msa.composecraft.crossfadeImageSlider
+package com.msa.composecraft.animComponent.crossfadeImageSlider
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.FiniteAnimationSpec

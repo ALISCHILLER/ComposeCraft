@@ -1,4 +1,4 @@
-package com.msa.composecraft.animatedColorTextDisplay
+package com.msa.composecraft.animComponent.animatedColorTextDisplay
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode

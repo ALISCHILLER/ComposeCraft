@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.msa.composecraft.animatedButtonShowcase.AnimatedButtonShowcase
-import com.msa.composecraft.crossfadeImageSlider.CrossfadeImageSlider
+import com.msa.composecraft.animComponent.animatedButtonShowcase.AnimatedButtonShowcase
+import com.msa.composecraft.animComponent.crossfadeImageSlider.CrossfadeImageSlider
 import com.msa.composecraft.ui.theme.ComposeCraftTheme
 
 class MainActivity : ComponentActivity() {

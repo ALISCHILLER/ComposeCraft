@@ -1,4 +1,4 @@
-package com.msa.composecraft.animatedButtonShowcase
+package com.msa.composecraft.animComponent.animatedButtonShowcase
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween

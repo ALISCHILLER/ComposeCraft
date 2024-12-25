@@ -1,4 +1,4 @@
-package com.msa.composecraft.verticalSliderHandle
+package com.msa.composecraft.animComponent.verticalSliderHandle
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
