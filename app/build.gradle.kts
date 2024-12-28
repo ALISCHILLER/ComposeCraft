@@ -59,4 +59,12 @@ dependencies {
 
     //material.icons
     implementation(libs.androidx.material.icons.extended.android)
+
+    //coil loading image
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+    //pager image
+    implementation (libs.accompanist.pager)
+    implementation (libs.accompanist.pager.indicators)
 }

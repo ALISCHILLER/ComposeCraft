@@ -8,13 +8,16 @@
       <SelectionState runConfigName="PreviewProgressBar">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="CircularProgressBarPreview">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="DailyCalorieProgressPreview">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="CircleProgressIndicatorPreview">
+      <SelectionState runConfigName="OtpFieldPreview">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="PreviewVerticalSlider">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="PreviewVerticalSlider2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

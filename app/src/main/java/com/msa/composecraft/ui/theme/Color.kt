@@ -34,3 +34,15 @@ val DeepOrange = Color(0xFFF04A00)
 
 val OffWhite = Color(0xFFF5F5F5) // Light Grey
 val OffBlack = Color(0xFF212121) // Dark Grey
+
+
+val barcolor = Color(0xffbfbfc0)
+val barcolorDark = Color(0xFF2E2E2E)
+val barcolorlow = Color(0xFF525252)
+val barcolorlight = Color(0xFFEEEEEE)
+val barcolorlight2 = Color(0xFF8D8D8D)
+val lightcoral = Color(0xfff3b8bb)
+
+
+
+val RedMain = Color(0xFFEB091E)

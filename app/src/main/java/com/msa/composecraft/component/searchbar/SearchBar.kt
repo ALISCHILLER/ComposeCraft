@@ -1,4 +1,4 @@
-package com.msa.composecraft.component.editText
+package com.msa.composecraft.component.searchbar
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
@@ -20,9 +20,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.traversalIndex
 import androidx.compose.ui.tooling.preview.Preview
 
 // این کامپوننت برای نمایش یک نوار جستجوی استاندارد است که کاربران می‌توانند متن جستجو را وارد کنند.
