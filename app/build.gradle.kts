@@ -67,4 +67,12 @@ dependencies {
     //pager image
     implementation (libs.accompanist.pager)
     implementation (libs.accompanist.pager.indicators)
+
+    // lottie
+    implementation (libs.lottie.compose)
+    implementation ("com.google.accompanist:accompanist-swiperefresh:0.35.1-alpha")
+
+    // ViewModel utilities for Compose
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }

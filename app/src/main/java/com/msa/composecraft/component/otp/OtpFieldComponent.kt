@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.msa.composecraft.component.editText
+package com.msa.composecraft.component.otp
 
 
 

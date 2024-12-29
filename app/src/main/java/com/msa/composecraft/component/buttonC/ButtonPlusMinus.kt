@@ -92,7 +92,7 @@ fun CounterButtonNew(
                     else
                         onValue("0") // جلوگیری از مقدار خالی
                 },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
+                colors = androidx.compose.material3.OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = Color.Transparent,
                     unfocusedBorderColor = Color.Transparent,
                     focusedTextColor = Color.Black,
