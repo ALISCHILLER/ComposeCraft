@@ -22,6 +22,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -30,20 +31,24 @@ import androidx.compose.ui.unit.sp
 import com.msa.composecraft.R
 
 /**
- * یک دکمه سفارشی با قابلیت‌های متنوع.
+ * یک کامپوننت Button سفارشی که قابلیت‌های مختلفی از جمله پشتیبانی از گرادیان، آیکون، لودینگ و استایل‌های متنی دارد.
+ * این کامپوننت به گونه‌ای طراحی شده که به راحتی قابل استفاده و شخصی‌سازی باشد.
  *
- * @param text متن دکمه.
- * @param onClick Callback برای کلیک روی دکمه.
- * @param modifier Modifier برای تنظیمات layout و استایل.
- * @param icon آیکون دکمه (اختیاری).
- * @param gradient گرادیان پس‌زمینه دکمه (اختیاری).
- * @param backgroundColor رنگ پس‌زمینه دکمه (اگر گرادیان تنظیم نشده باشد).
- * @param textColor رنگ متن دکمه.
- * @param shape شکل دکمه (پیش‌فرض: گوشه‌های گرد).
- * @param borderStroke حاشیه دکمه (اختیاری).
- * @param enabled وضعیت فعال/غیرفعال دکمه.
- * @param isLoading وضعیت لودینگ دکمه (اختیاری).
- * @param elevation ارتفاع سایه دکمه.
+ * @param text متن دکمه
+ * @param onClick تابعی که هنگام کلیک روی دکمه اجرا می‌شود
+ * @param modifier تنظیمات Modifier برای سفارشی‌سازی ظاهر و رفتار دکمه
+ * @param icon آیکون اختیاری برای نمایش در کنار متن دکمه
+ * @param gradient براش گرادیان اختیاری برای پس‌زمینه دکمه
+ * @param backgroundColor رنگ پس‌زمینه دکمه (در صورتی که گرادیان تعریف نشده باشد)
+ * @param textColor رنگ متن دکمه
+ * @param textStyle استایل متنی دکمه
+ * @param shape شکل دکمه (پیش‌فرض: گوشه‌های گرد)
+ * @param borderStroke استایل حاشیه دکمه
+ * @param enabled وضعیت فعال یا غیرفعال بودن دکمه
+ * @param isLoading وضعیت نمایش نشانگر لودینگ
+ * @param elevation مقدار سایه دکمه
+ * @param iconSpacing فاصله بین آیکون و متن
+ * @param loadingIndicatorSize اندازه نشانگر لودینگ
  */
 @Composable
 fun CustomButton(
@@ -52,75 +57,71 @@ fun CustomButton(
     modifier: Modifier = Modifier,
     icon: ImageVector? = null,
     gradient: Brush? = null,
-    backgroundColor: Color = Color.Blue,
-    textColor: Color = Color.White,
+    backgroundColor: Color = MaterialTheme.colorScheme.primary,
+    textColor: Color = MaterialTheme.colorScheme.onPrimary,
+    textStyle: TextStyle = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Medium),
     shape: Shape = RoundedCornerShape(8.dp),
     borderStroke: BorderStroke? = null,
     enabled: Boolean = true,
     isLoading: Boolean = false,
     elevation: Dp = 4.dp,
+    iconSpacing: Dp = 8.dp,
+    loadingIndicatorSize: Dp = 24.dp
 ) {
-    // تعیین پس‌زمینه دکمه: اگر گرادیان تنظیم شده باشد از آن استفاده می‌شود، در غیر این‌صورت از رنگ پس‌زمینه.
+    // ایجاد پس‌زمینه دکمه بر اساس گرادیان یا رنگ ساده
     val buttonBackground = gradient ?: Brush.linearGradient(
         colors = listOf(backgroundColor, backgroundColor)
     )
 
-    // انیمیشن شفافیت برای حالت غیرفعال
+    // انیمیشن تغییر شفافیت برای حالت فعال و غیرفعال
     val alpha by animateFloatAsState(
         targetValue = if (enabled) 1f else 0.5f,
         animationSpec = tween(durationMillis = 300)
     )
 
-    // دکمه Material3 با قابلیت‌های سفارشی‌سازی شده
     Button(
         onClick = onClick,
         modifier = modifier
-            .clip(shape) // اعمال شکل دکمه
-            .alpha(alpha) // اعمال شفافیت
-            .semantics { role = Role.Button }, // تنظیم نقش دکمه برای دسترسی‌پذیری
-        enabled = enabled && !isLoading, // کنترل وضعیت فعال/غیرفعال
-        shape = shape, // شکل دکمه
-        border = borderStroke, // حاشیه دکمه
-        elevation = ButtonDefaults.buttonElevation(defaultElevation = elevation), // ارتفاع سایه
-        colors = ButtonDefaults.buttonColors(
-            containerColor = Color.Transparent, // رنگ پس‌زمینه شفاف
-            disabledContainerColor = Color.Transparent, // رنگ پس‌زمینه شفاف در حالت غیرفعال
-        ),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp), // فاصله داخلی
+            .clip(shape)
+            .alpha(alpha)
+            .semantics { role = Role.Button },
+        enabled = enabled && !isLoading,
+        shape = shape,
+        border = borderStroke,
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = elevation),
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+        contentPadding = PaddingValues(horizontal = 0.dp, vertical = 0.dp),
     ) {
         Box(
             modifier = Modifier
-                .background(buttonBackground, shape) // اعمال پس‌زمینه
+                .background(buttonBackground, shape)
                 .fillMaxSize()
                 .padding(horizontal = 16.dp, vertical = 12.dp),
-            contentAlignment = Alignment.Center,
+            contentAlignment = Alignment.Center
         ) {
             if (isLoading) {
-                // نمایش نشانگر لودینگ در صورت فعال بودن حالت لودینگ
+                // نمایش نشانگر لودینگ در حالت لودینگ
                 CircularProgressIndicator(
                     color = textColor,
-                    modifier = Modifier.size(24.dp)
+                    modifier = Modifier.size(loadingIndicatorSize),
+                    strokeWidth = 2.dp
                 )
             } else {
-                // نمایش متن و آیکون دکمه
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(iconSpacing),
                 ) {
+                    // نمایش آیکون در صورت تعریف
                     icon?.let {
                         Icon(
                             imageVector = it,
-                            contentDescription = "Button Icon",
+                            contentDescription = null,
                             tint = textColor,
                             modifier = Modifier.size(24.dp)
                         )
                     }
-                    Text(
-                        text = text,
-                        color = textColor,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Medium,
-                    )
+                    // نمایش متن دکمه
+                    Text(text = text, color = textColor, style = textStyle)
                 }
             }
         }
@@ -128,7 +129,7 @@ fun CustomButton(
 }
 
 /**
- * Preview برای نمایش دکمه‌های سفارشی.
+ * پیش‌نمایش‌های مختلف برای بررسی ظاهر و عملکرد کامپوننت CustomButton.
  */
 @Preview(showBackground = true)
 @Composable
@@ -142,82 +143,36 @@ private fun CustomButtonPreview() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
-                    .verticalScroll(rememberScrollState()), // امکان اسکرول عمودی
+                    .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // دکمه ساده
-                Text(text = "دکمه ساده:", style = MaterialTheme.typography.labelMedium)
+                // پیش‌نمایش دکمه ساده
                 CustomButton(
                     text = "Click Me",
-                    onClick = { println("Button Clicked!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp), // عرض و ارتفاع دکمه
-                    backgroundColor = Color.Blue,
-                    textColor = Color.White,
+                    onClick = { },
+                    modifier = Modifier.fillMaxWidth(),
                 )
 
-                // دکمه با آیکون
-                Text(text = "دکمه با آیکون:", style = MaterialTheme.typography.labelMedium)
+                // پیش‌نمایش دکمه با آیکون
                 CustomButton(
                     text = "Save",
-                    onClick = { println("Saved!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    icon = ImageVector.vectorResource(id = R.drawable.ic_save),
-                    backgroundColor = Color.Green,
-                    textColor = Color.White,
-                )
-
-                // دکمه با گرادیان
-                Text(text = "دکمه با گرادیان:", style = MaterialTheme.typography.labelMedium)
-                CustomButton(
-                    text = "Gradient Button",
-                    onClick = { println("Gradient Button Clicked!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    gradient = Brush.horizontalGradient(listOf(Color.Red, Color.Yellow)),
-                    textColor = Color.White,
-                )
-
-                // دکمه غیرفعال
-                Text(text = "دکمه غیرفعال:", style = MaterialTheme.typography.labelMedium)
-                CustomButton(
-                    text = "Disabled",
-                    onClick = { println("This won't be called!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    backgroundColor = Color.Gray,
-                    textColor = Color.White,
-                    enabled = false,
-                )
-
-                // دکمه در حال لودینگ
-                Text(text = "دکمه در حال لودینگ:", style = MaterialTheme.typography.labelMedium)
-                CustomButton(
-                    text = "Loading...",
-                    onClick = { println("Loading...") },
+                    onClick = { },
                     modifier = Modifier.fillMaxWidth(),
-                    backgroundColor = Color.Blue,
-                    textColor = Color.White,
-                    isLoading = true,
+                    icon = ImageVector.vectorResource(id = R.drawable.ic_save),
                 )
 
-                // دکمه با حاشیه
-                Text(text = "دکمه با حاشیه:", style = MaterialTheme.typography.labelMedium)
+                // پیش‌نمایش دکمه با گرادیان
                 CustomButton(
-                    text = "Bordered Button",
-                    onClick = { println("Bordered Button Clicked!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    backgroundColor = Color.Transparent,
-                    textColor = Color.Blue,
-                    borderStroke = BorderStroke(2.dp, Color.Blue),
+                    text = "Gradient",
+                    onClick = { },
+                    gradient = Brush.horizontalGradient(colors = listOf(Color.Red, Color.Yellow))
                 )
 
-                // دکمه با گوشه‌های گرد بزرگ
-                Text(text = "دکمه با گوشه‌های گرد بزرگ:", style = MaterialTheme.typography.labelMedium)
+                // پیش‌نمایش دکمه در حالت لودینگ
                 CustomButton(
-                    text = "Rounded Button",
-                    onClick = { println("Rounded Button Clicked!") },
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    backgroundColor = Color.Red,
-                    textColor = Color.White,
-                    shape = RoundedCornerShape(20.dp),
+                    text = "Loading",
+                    onClick = { },
+                    isLoading = true
                 )
             }
         }

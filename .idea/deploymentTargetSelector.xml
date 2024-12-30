@@ -5,19 +5,19 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="ExpandableComponentPreview">
+      <SelectionState runConfigName="QuantityPreview">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="BezierCurvePreview">
+      <SelectionState runConfigName="PreviewButtonBorderAnimation">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="AdvancedBezierCurvePreview">
+      <SelectionState runConfigName="preciew">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="CustomButtonPreview">
+      <SelectionState runConfigName="AdvancedBottomSheetPreview">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="CustomTextFieldPreview">
+      <SelectionState runConfigName="CustomBottomSheetPreview">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

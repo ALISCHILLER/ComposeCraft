@@ -43,6 +43,12 @@ val barcolorlight = Color(0xFFEEEEEE)
 val barcolorlight2 = Color(0xFF8D8D8D)
 val lightcoral = Color(0xfff3b8bb)
 
+val LightPurple = Color(0xFFBCA1E7)
+val RoyalPurple = Color(0xEB700C24)
+val RoyalRed = Color(0xFFEB091E)
 
+
+
+val OrangeStatus = Color(0xFFFFAB00)
 
 val RedMain = Color(0xFFEB091E)

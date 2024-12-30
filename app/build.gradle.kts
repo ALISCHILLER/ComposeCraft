@@ -75,4 +75,16 @@ dependencies {
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //SMSRetrieval API Dependencies for Auto OTP Verification
+    implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    implementation("androidx.media3:media3-exoplayer:1.2.0")
+    implementation("androidx.media3:media3-ui:1.2.0")
+
+    implementation ("androidx.media3:media3-exoplayer:1.6.0-alpha01")
+    implementation ("androidx.media3:media3-ui:1.6.0-alpha01")
+    implementation ("androidx.compose.foundation:foundation:1.0.0")
+    implementation ("androidx.compose.material3:material3:1.0.0")
 }
