@@ -87,4 +87,7 @@ dependencies {
     implementation ("androidx.media3:media3-ui:1.6.0-alpha01")
     implementation ("androidx.compose.foundation:foundation:1.0.0")
     implementation ("androidx.compose.material3:material3:1.0.0")
+
+    //androidx.navigation
+    implementation(libs.androidx.navigation.compose)
 }
