@@ -1,24 +1,24 @@
 [versions]
-agp = "8.7.3"
+agp = "8.9.1"
 
-kotlin = "2.0.0"
-coreKtx = "1.15.0"
+kotlin = "2.0.21"
+coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.9.3"
-composeBom = "2024.12.01"
+lifecycleRuntimeKtx = "2.9.1"
+activityCompose = "1.10.1"
+composeBom = "2025.06.00"
 
-materialIconsExtendedAndroid = "1.7.6"
-coilNetworkOkhttp = "3.0.4"
-coilCompose = "3.0.4"
-accompanistPager = "0.34.0"
-lottieCompose = "6.4.0"
+materialIconsExtendedAndroid = "1.7.8"
+coilNetworkOkhttp = "3.2.0"
+coilCompose = "3.2.0"
+accompanistPager = "0.36.0"
+lottieCompose = "6.6.6"
 
 runtimeLivedata = "1.7.6"
 
-navigationCompose = "2.8.5"
+navigationCompose = "2.9.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttp" }

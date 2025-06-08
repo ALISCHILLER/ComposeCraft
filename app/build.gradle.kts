@@ -70,23 +70,23 @@ dependencies {
 
     // lottie
     implementation (libs.lottie.compose)
-    implementation ("com.google.accompanist:accompanist-swiperefresh:0.35.1-alpha")
+    implementation ("com.google.accompanist:accompanist-swiperefresh:0.36.0")
 
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     //SMSRetrieval API Dependencies for Auto OTP Verification
-    implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.android.gms:play-services-auth-api-phone:18.2.0")
+    implementation("com.google.android.gms:play-services-auth:21.3.0")
 
-    implementation("androidx.media3:media3-exoplayer:1.2.0")
-    implementation("androidx.media3:media3-ui:1.2.0")
+    implementation("androidx.media3:media3-exoplayer:1.7.1")
+    implementation("androidx.media3:media3-ui:1.7.1")
 
-    implementation ("androidx.media3:media3-exoplayer:1.6.0-alpha01")
-    implementation ("androidx.media3:media3-ui:1.6.0-alpha01")
-    implementation ("androidx.compose.foundation:foundation:1.0.0")
-    implementation ("androidx.compose.material3:material3:1.0.0")
+    implementation ("androidx.media3:media3-exoplayer:1.7.1")
+    implementation ("androidx.media3:media3-ui:1.7.1")
+    implementation ("androidx.compose.foundation:foundation:1.8.2")
+    implementation ("androidx.compose.material3:material3:1.3.2")
 
     //androidx.navigation
     implementation(libs.androidx.navigation.compose)
